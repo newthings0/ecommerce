@@ -1,7 +1,7 @@
 "use client";
 
 import Stripe from "stripe";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { Button } from "./ui/button";
 import { useCartStore } from "@/store/cart-store";
 
@@ -32,10 +32,12 @@ export const ProductDetail = ({ product }: Props) => {
           <Image
             src={product.images[0]}
             alt={product.name}
-            layout="fill"
-            objectFit="cover"
             className="transition duration-300 hover:opacity-90"
-          />
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover"
+            }} />
         </div>
       )}
       <div className="md:w-1/2">

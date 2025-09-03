@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Stripe from "stripe";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { Button } from "./ui/button";
 
 interface Props {
@@ -19,10 +19,12 @@ export const ProductCard = ({ product }: Props) => {
             <Image
               src={product.images[0]}
               alt={product.name}
-              layout="fill"
-              objectFit="cover"
               className="group-hover:opacity-90 transition-opacity duration-300 rounded-t-lg"
-            />
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: "cover"
+              }} />
           </div>
         )}
         <CardHeader className="p-4">

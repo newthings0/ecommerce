@@ -3,7 +3,7 @@
 import Stripe from "stripe";
 import { Card, CardContent, CardTitle } from "./ui/card";
 import { useEffect, useState } from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 interface Props {
   products: Stripe.Product[];
@@ -31,10 +31,12 @@ export const Carousel = ({ products }: Props) => {
           <Image
             src={currentProduct.images[0]}
             alt={currentProduct.name}
-            layout="fill"
-            objectFit="cover"
             className="transition-opacity duration-500 ease-in-out"
-          />
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover"
+            }} />
         </div>
       )}
       <CardContent className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50">

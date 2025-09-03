@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { stripe } from "@/lib/stripe";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -40,7 +40,10 @@ export default async function Home() {
             className="rounded"
             width={450}
             height={450}
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </div>
       </section>
       <section className="py-8">
