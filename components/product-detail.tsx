@@ -1,7 +1,7 @@
 "use client";
 
 import Stripe from "stripe";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Button } from "./ui/button";
 import { useCartStore } from "@/store/cart-store";
 
